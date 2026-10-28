@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuickNotes</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="api.js" defer></script>
+</head>
+
+<body>
+
+    <!--HEADER-->
+
+    <header class="site-header">
+
+        <div class="container">
+            <h1>QuickNotes</h1>
+            <p>Your simple online notes manager</p>
+        </div>
+
+    </header>
+
+    <!--MAIN CONTENT-->
+
+     <main class="container">
+        <section class="panel" aria-labelledby="create-heading">
+            <h2 id="create-heading">Create a note</h2>
+
+            <form id="note-form">
+                <div class="form-group">
+                    <label for="title-input">Note title (required)</label>
+                    <input
+                        type="text"
+                        id="title-input"
+                        name="title"
+                        maxlength="100"
+                        required
+                        placeholder="Enter a note title"
+                    >
+                    <small>Maximum 100 characters.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="body-input">Note body (optional)</label>
+                    <textarea
+                        id="body-input"
+                        name="body"
+                        rows="4"
+                        placeholder="Write your note here"
+                    ></textarea>
+                </div>
+
+                <button type="submit" id="submit-btn">Create note</button>
+            </form>
+        </section>
+
+        <section class="panel" aria-labelledby="notes-heading">
+            <div class="section-heading">
+                <h2 id="notes-heading">My notes</h2>
+                <button type="button" id="load-btn">Load notes</button>
+            </div>
+
+            <p id="status" class="status" role="status" aria-live="polite">
+            Select "Load notes" to retrieve notes from the server.
+            </p>
+
+            <ul id="notes-list" aria-label="Notes list"></ul>
+        </section>
+    </main>
+
+    <!--FOOTER-->
+    <footer class="site-footer">
+            <div class="container">
+                <p>QuickNotes System</p>
+                <p>&copy; 2026 | Developed by Ibrahim during web development </p>
+             </div>
+    </footer>
+</body>
+</html>
